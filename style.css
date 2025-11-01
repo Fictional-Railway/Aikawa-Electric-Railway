@@ -4,15 +4,8 @@ body {
     color: #5c3a21;
     margin: 0;
     padding: 0;
-    filter: contrast(120%) blur(0.28px);
+    filter: contrast(120%)
 
-}
-
-@media (max-width: 600px) {
-  .hero-photo {
-    /* スマホだけ弱めにする例（過度に悪くならない） */
-    filter: contrast(120%) blur(0.1px);
-  }
 }
 
 header {
