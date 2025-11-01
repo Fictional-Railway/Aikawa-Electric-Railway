@@ -70,16 +70,24 @@
     </footer>
 
     <script>
+document.addEventListener("DOMContentLoaded", function() {
+  setTrainInfo("normal"); // normal / delay / suspend
+});
+
 function setTrainInfo(status) {
   const infoBox = document.getElementById("train-info");
   const infoText = document.getElementById("info-text");
 
-  // 現在の日付を整形
+  if (!infoBox || !infoText) return; // 念のため要素があるかチェック
+
+  // 現在の日付と時刻を整形
   const now = new Date();
   const year = now.getFullYear();
   const month = now.getMonth() + 1;
   const day = now.getDate();
-  const formattedDate = `${year}年${month}月${day}日現在`;
+  const hours = now.getHours();
+  const minutes = now.getMinutes().toString().padStart(2, '0');
+  const formattedDate = `${year}年${month}月${day}日 ${hours}:${minutes}現在`;
 
   // 運行状況メッセージ
   let message = "";
@@ -94,12 +102,9 @@ function setTrainInfo(status) {
     message = "現在、一部区間で運転を見合わせています。";
   }
 
-  // 表示文をまとめて設定
+  // 日付＋運行情報をまとめて表示
   infoText.textContent = `${formattedDate}　${message}`;
 }
-
-// ページ読み込み時に表示
-setTrainInfo("normal");
 
     </script>
 

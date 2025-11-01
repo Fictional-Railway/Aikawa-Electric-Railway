@@ -109,7 +109,3 @@ footer {
     border: 1px solid #5c3a21;
 }
 
-.train-info p {
-  margin: 10px 0; /* 上下の余白 */
-  flex-shrink: 0; /* flex内で縮まないようにする */
-}
