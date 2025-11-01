@@ -98,3 +98,8 @@ footer {
     
     margin: 5px;
 }
+
+.news-title:hover {
+    background-color: #f4e7d0;
+    cursor: pointer;
+}
