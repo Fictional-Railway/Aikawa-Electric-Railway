@@ -4,7 +4,7 @@ body {
     color: #5c3a21;
     margin: 0;
     padding: 0;
-    filter: contrast(120%) blur(0.33px);
+    filter: contrast(120%) blur(0.25px);
 
 }
 
@@ -83,22 +83,4 @@ footer {
     border-top: 2px solid #5c3a21;
     font-size: 0.9em;
     margin-top: 20px;
-}
-
-
-/* スマホ向け（幅が600px以下なら上書き）*/
-@media (max-width: 600px) {
-  .hero-photo {
-    /* スマホだけ弱めにする例（過度に悪くならない） */
-    filter: blur(1px) contrast(.95) saturate(.9);
-  }
-}
-
-/* もし“スマホでは激しく画質落ちる”デフォルトで、
-   スマホだけ別でさらに制御したいなら逆にデスクトップで上書き */
-@media (min-width: 601px) {
-  .hero-photo {
-    /* デスクトップは高画質 */
-    filter: blur(0) contrast(1) saturate(1);
-  }
 }
