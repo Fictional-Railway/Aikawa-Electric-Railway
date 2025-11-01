@@ -1,0 +1,84 @@
+body {
+    font-family: "MS 明朝", "游明朝", serif;
+    background-color: #fdf6e3;
+    color: #5c3a21;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #e8d6b9;
+    text-align: center;
+    padding: 20px 0;
+    padding-top: 35px;
+    border-bottom: 2px solid #5c3a21;
+    line-height: 0.8;
+}
+
+.header{
+    text-decoration: none;
+    color: inherit;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.container {
+    display: flex;
+}
+
+nav {
+    width: 200px;
+    background-color: #f4e7d0;
+    padding: 20px;
+    border-right: 2px solid #5c3a21;
+    min-height: calc(100vh - 82px); /* header含む */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    margin-bottom: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #5c3a21;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+.map-section img {
+    max-width: 100%;
+    border: 2px solid #5c3a21;
+}
+
+.station-info {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff8e1;
+    border: 1px solid #5c3a21;
+}
+
+footer {
+    background-color: #e8d6b9;
+    color: #5c3a21;
+    text-align: center;
+    padding: 15px 0;
+    border-top: 2px solid #5c3a21;
+    font-size: 0.9em;
+    margin-top: 20px;
+}
