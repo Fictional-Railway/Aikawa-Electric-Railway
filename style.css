@@ -8,6 +8,13 @@ body {
 
 }
 
+@media (max-width: 600px) {
+  .hero-photo {
+    /* スマホだけ弱めにする例（過度に悪くならない） */
+    filter: contrast(120%) blur(0.1px);
+  }
+}
+
 header {
     background-color: #e8d6b9;
     text-align: center;
