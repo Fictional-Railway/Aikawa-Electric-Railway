@@ -24,14 +24,29 @@
             </ul>
         </nav>
         <main>
-            <section class="station-info" id="station-info">
-                <h2>最新のお知らせ</h2>
-                <ul>
-                    <li><a href="#">2025/10/20 中津駅簡易改札機故障について</a></li>
-                    <li><a href="#">2025/04/05 あいかわ公園・サクラ開花のお知らせ</a></li>
-                    <li><a href="#">2024/03/15 ダイヤ改正のお知らせ</a></li>
-                </ul>
-            </section>
+<section class="station-info" id="station-info">
+    <h2>最新のお知らせ</h2>
+    <ul>
+        <li class="news-item">
+            <button class="news-title">2025/10/20 中津駅簡易改札機故障について</button>
+            <div class="news-content">
+                <p>中津駅の簡易改札機が一時的に故障しております。ご利用のお客様にはご迷惑をお掛けしますが、車内で切符をお求め下さい。<br>10/22追記 現在は復旧しております。ご利用のお客様にはご迷惑をおかけしました。</p>
+            </div>
+        </li>
+        <li class="news-item">
+            <button class="news-title">2025/04/05 あいかわ公園・サクラ開花のお知らせ</button>
+            <div class="news-content">
+                <p>あいかわ公園のサクラが開花しました！今週末が見頃となります。ぜひご来園ください。</p>
+            </div>
+        </li>
+        <li class="news-item">
+            <button class="news-title">2024/03/15 ダイヤ改正のお知らせ</button>
+            <div class="news-content">
+                <p>3月15日にダイヤ改正を実施しました。詳細は時刻表ページをご覧ください。</p>
+            </div>
+        </li>
+    </ul>
+</section>
         </main>
     </div>
 
@@ -42,6 +57,32 @@
         <p>愛川電鉄はあくまでも架空の鉄道です！リアリティなどに関する文句は受け付けておりません。</p>
     </footer>
 
-    <script src="script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const items = document.querySelectorAll(".news-item");
+
+  items.forEach((item) => {
+    const title = item.querySelector(".news-title");
+    const content = item.querySelector(".news-content");
+
+    // 初期状態では非表示にする
+    content.style.display = "none";
+
+    // クリックしたら開閉
+    title.addEventListener("click", () => {
+      if (content.style.display === "none") {
+        content.style.display = "block";
+      } else {
+        content.style.display = "none";
+      }
+    });
+  });
+});
+
+
+
+</script>
+
+
 </body>
 </html>
