@@ -24,6 +24,20 @@
             </ul>
         </nav>
         <main>
+
+            <section>
+                <div>
+                    <h2>運行情報</h2>
+                    <div id="train-info" class="station-info">
+                        
+                        <p id="info-text"></p>
+                        <p id="update-time"></p>
+                    </div>
+
+                </div>
+
+            </section>
+
              <h2>愛川電鉄とは？</h2>
                 <p class="station-info">愛川電鉄とは、愛川ニュータウンから伊勢原、平塚などを経由して大磯に至る愛川線と、緑ヶ丘から厚木、海老名などを経由して神奈川空港に至る空港線で構成されている鉄道です。</p>
             <br>
@@ -51,6 +65,39 @@
         <p>愛川電鉄はあくまでも架空の鉄道です！リアリティなどに関する文句は受け付けておりません。</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+function setTrainInfo(status) {
+  const infoBox = document.getElementById("train-info");
+  const infoText = document.getElementById("info-text");
+
+  // 現在の日付を整形
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = now.getMonth() + 1;
+  const day = now.getDate();
+  const formattedDate = `${year}年${month}月${day}日現在`;
+
+  // 運行状況メッセージ
+  let message = "";
+  if (status === "normal") {
+    infoBox.classList.remove("alert");
+    message = "全線で平常どおり運転しています。";
+  } else if (status === "delay") {
+    infoBox.classList.add("alert");
+    message = "一部の列車に遅れが発生しています。";
+  } else if (status === "suspend") {
+    infoBox.classList.add("alert");
+    message = "現在、一部区間で運転を見合わせています。";
+  }
+
+  // 表示文をまとめて設定
+  infoText.textContent = `${formattedDate}　${message}`;
+}
+
+// ページ読み込み時に表示
+setTrainInfo("normal");
+
+    </script>
+
 </body>
 </html>

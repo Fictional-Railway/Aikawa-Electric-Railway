@@ -104,3 +104,10 @@ footer {
 .atag:hover{
     text-decoration: underline;
 }
+
+.train-info {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff8e1;
+    border: 1px solid #5c3a21;
+}
