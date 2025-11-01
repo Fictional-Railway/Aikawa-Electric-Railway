@@ -24,24 +24,11 @@
             </ul>
         </nav>
         <main>
-
-            <section>
-                <div>
-                    <h2>運行情報</h2>
-                    <div id="train-info" class="station-info">
-                        
-                        <p id="info-text"></p>
-                        <p id="update-time"></p>
-                    </div>
-
-                </div>
-                </section>
-
-                <br>
-                
-
+            <section class="train-info">
+            <h2>運行情報</h2>
+                <p>現在、運行に遅延や停止などの影響は出ておりません。</p>
             </section>
-
+            <br>
              <h2>愛川電鉄とは？</h2>
                 <p class="station-info">愛川電鉄とは、愛川ニュータウンから伊勢原、平塚などを経由して大磯に至る愛川線と、緑ヶ丘から厚木、海老名などを経由して神奈川空港に至る空港線で構成されている鉄道です。</p>
             <br>
@@ -51,13 +38,16 @@
             </section>
 
 
-            <section class="station-info" id="station-info">
+            <section>
                 <h2>最新のお知らせ</h2>
+                <div class="station-info2">
                 <ul>
-                    <li><a href="./html/notice.html">2025/10/20 中津駅簡易改札機故障について</a></li>
-                    <li><a href="./html/notice.html">2025/04/05 あいかわ公園・サクラ開花のお知らせ</a></li>
-                    <li><a href="./html/notice.html">2024/03/15 ダイヤ改正のお知らせ</a></li>
+                    <li>2025/10/20 中津駅簡易改札機故障について</a></li>
+                    <li>2025/04/05 あいかわ公園・サクラ開花のお知らせ</li>
+                    <li>2024/03/15 ダイヤ改正のお知らせ</li>
                 </ul>
+                <a class="mottomiru" href="./html/notice.html">もっと見る…</a>
+                </div>
             </section>
         </main>
     </div>
@@ -70,41 +60,6 @@
     </footer>
 
     <script>
-document.addEventListener("DOMContentLoaded", function() {
-  setTrainInfo("normal"); // normal / delay / suspend
-});
-
-function setTrainInfo(status) {
-  const infoBox = document.getElementById("train-info");
-  const infoText = document.getElementById("info-text");
-
-  if (!infoBox || !infoText) return; // 念のため要素があるかチェック
-
-  // 現在の日付と時刻を整形
-  const now = new Date();
-  const year = now.getFullYear();
-  const month = now.getMonth() + 1;
-  const day = now.getDate();
-  const hours = now.getHours();
-  const minutes = now.getMinutes().toString().padStart(2, '0');
-  const formattedDate = `${year}年${month}月${day}日 ${hours}:${minutes}現在`;
-
-  // 運行状況メッセージ
-  let message = "";
-  if (status === "normal") {
-    infoBox.classList.remove("alert");
-    message = "全線で平常どおり運転しています。";
-  } else if (status === "delay") {
-    infoBox.classList.add("alert");
-    message = "一部の列車に遅れが発生しています。";
-  } else if (status === "suspend") {
-    infoBox.classList.add("alert");
-    message = "現在、一部区間で運転を見合わせています。";
-  }
-
-  // 日付＋運行情報をまとめて表示
-  infoText.textContent = `${formattedDate}　${message}`;
-}
 
     </script>
 
